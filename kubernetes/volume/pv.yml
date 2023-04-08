@@ -9,4 +9,4 @@ spec:
   capacity:
     storage: 2Gi
   hostPath:
-    path: '/home/ubuntu'
+    path: "/home/ubuntu"
