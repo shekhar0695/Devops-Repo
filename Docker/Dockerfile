@@ -1,9 +1,8 @@
 FROM python:slim
 RUN apt update
 WORKDIR /app
-RUN pip install
 COPY main.py ./app
 COPY requirements.txt ./app
-RUN pip -r requirements.txt
+RUN pip install -r requirements.txt
 CMD ["python","main.py"]
 ENTRYPOINT ["/bin/bash"]
