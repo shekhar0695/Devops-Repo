@@ -1,0 +1,241 @@
+==================================================GROOMING SESSIONS QUESTIONS=====================================================================
+
+
+=========================================Linux commands===========================================================================================
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Linux varients/flavours
+package managers
+Linux commands---> ls,ls-lrt,pwd,touch,mkdir,vi,cp,mv,cut,awk,sed,grep,find,maxdepth,xargs
+                   pipe,head,tail,df-h,du-sh,redirect,append,wc,su,sudo,ps-ef,ping,telnet,
+                   netstat,tee,uname,chmod,chown,sort,uniq,wget,curl,top,uptime,load average,
+                   scp,rsync,softlink,hardlink,check hidden files,list open files,pid,smtp,
+                   umask,bashrc.
+how to tar a file and zip a file
+server to server connection with username and passwd
+server to server connection with .pem key
+server to server connection with passwordless 
+how to add user and give sudo permission
+
+=========================================shell script==============================================================================================
+---------------------------------------------------------------------------------------------------------------------------------------------------
+shebang
+types of shells
+scripting
+syntax of ifelse,elif,while,for,case,function---
+special characters
+environmental variables
+how to set env variables
+mail
+crontab
+check default shell
+crontab last day of the month
+crontab *****
+set alert disk size is >90% and mail
+script running in the bagckround
+nohup
+bring back to the foreground
+how to run the script
+write a script to install tomcat
+menu based scripts
+
+===========================================AWS=====================================================================================================
+---------------------------------------------------------------------------------------------------------------------------------------------------
+aws
+why we use cloud computing
+types of cloud server models
+aws services
+aws region
+availability zones
+disaster recovery in aws
+edge locations and how it works
+how aws communicate with users
+cloud providers
+IAM--->user group,user,roles,policies
+types of policy
+role and why we use
+assume role---> cli,resources and switch b/w two accs
+cloudwatch--->metrics,alarm,logs,xray-trace
+states of alarms
+types of metrics
+SNS--->topic and subsription
+actions of alarms--->email,autoscaling,ec2 action,system manager action
+SQS---FIFO,Standard,visibility timeout,retention period,delivery delay,max msg size,
+      received msg wait time,dead letter queue
+KMS---encryption,SSE,CSE,types of keys,key rotation
+AWS Secret manager---definition,rotation of keys
+VPC----CIDR,c and private subnets,route table,IGW,bastion host,NAT gateway,
+       peering connection,NACL,Security groups
+ec2---types of instances,purchasing options,EBS,types of EBS,AMI,snapshot
+setting up the infrastructure of the project
+load balancer---application,network,gateway,classic load balancer
+lambda
+s3---storage classess,rules for bucket naming,limitations of s3 bucket,
+route53--DNS,record and types,routing policy types
+cloud formation
+cloudfront
+RDS
+What are vpc endpoints?
+Cloud migration?
+How to configure DNS?
+What is disk throttling?
+How to debugging lambda?
+How to block a traffic for particular ip?
+What is virtual private gateway?
+Where the session token will store?
+How to resolve 504 error?
+What is s3 bucket URL?
+What is s3 versioning?
+What is s3 replication?
+What is data blocking in VPC?
+What is user groups in load balancer?
+What is route53?
+In lambda “timeout error” is occurred,what could be the issue?
+Which layer of protocol will use DNS?
+What is SSL?
+What is the diff between TCP and UDP?
+How edge location works?
+What is the diff between ALB and CLB?
+=========================================GIT=======================================================================================================
+---------------------------------------------------------------------------------------------------------------------------------------------------
+git--->check the version of files and directories
+explain git architecture
+creat git repository
+how to add file from local repo to staging area or index area
+how to commit from staging area to git repository
+see status of the commits
+how to switch to commit id
+how to switch to recent commit id
+git clone
+git push and pull
+git fetch 
+merge conflict
+what is merging
+branch
+creating branch
+adding multiple files to staging area
+how to delete the branch
+how to switch to branch
+check history of repository
+git tag
+git rebase
+git cherry-pic
+git stash
+git revert
+git reset--->soft,hard,mix.
+git branching strategy
+how to generate token to github
+how to clone through ssh url from github?
+---------------------------------------------------------------------------------------------------------------------------------------------------
+build-tools---c/c++,java
+what is build,release,sanity/BVT test
+JIRA and its priorities
+syntax of makefile
+compilers
+maven and its lifecycle
+why maven and types of maven repo
+pom.xml
+config.xml
+sdlc
+agile and waterfall methodologies
+maven goals or targets
+clean,build and site in maven
+diff B/w .jar .war and .ear
+how to install tomcat and deploy .war file to webapps
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Jenkins and how to install jenkins
+ci/cd and its cycle
+master slave concept
+build periodically and poll scm
+plugins and its types
+hooks and types 
+how to create a job
+how to secure jenkins
+pull request (PR)
+fork in github
+difference between freestyle and pipeline project in jenkins
+how to configure the webhook
+selenium
+environmental variables in Jenkins
+what jenkin path contains
+shared library in jenkins
+----------------------------------------------------------------------------------------------------------------------------------------------------
+terraform and why we use terraform
+terraform architecture
+list resource block list
+terraform provider
+terraform alias
+terraform commands
+terraform module
+terraform statefile
+terraform state 
+terraform backend
+terraform provisioners--file,local,remote
+terraform workspace
+terraform null resource
+terraform data source block
+terraform import
+terraform projects
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Docker
+docker architecture
+docker image
+docker container
+docker commands--all
+Dockerfile
+Dockerfile instructions--FROM,RUN,COPY,ADD,WORKDIR,ENV,ARG,MAINTAINER
+practice Docker projects
+docker volumes
+docker network
+docker compose
+docker multisatge build
+------------------------------------------------------
+kubernetes
+k8s cluster setup
+k8s architecture
+write a Dockerfile and deploy nginx to kubernetes
+yaml file syntax
+Types of controllers
+services and types of services
+labels,selectors,annotations
+microservice to microservice communication
+pod to pod communication
+namespaces and types of namespaces
+pod lifecycle
+container status
+statefull and statelesss applications
+Monolithic and microservice architecture
+Configmaps and secrets
+k8s volumes
+k8s container types
+k8s probes
+crashloopbackoff error
+how to drain a node
+how to assign the pod to node
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
