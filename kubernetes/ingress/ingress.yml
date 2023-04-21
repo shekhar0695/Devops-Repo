@@ -6,7 +6,6 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
-  rules:
   - host: ingress.example.com
     http:
       paths:
@@ -17,7 +16,7 @@ spec:
             name: ingress-app-cluster-ip
             port:
               number: 30002
-      - path: /
+      - path: /name
         pathType: Prefix
         backend:
           service:
