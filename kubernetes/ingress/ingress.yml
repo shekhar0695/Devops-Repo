@@ -17,10 +17,10 @@ spec:
             name: ingress-app-cluster-ip
             port:
               number: 30002
-      - path: /name
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: ingress-app-cluster-ip-1
+            name: ingress-app-cluster-ip-name
             port:
               number: 30004
