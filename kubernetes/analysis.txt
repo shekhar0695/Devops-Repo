@@ -1,0 +1,53 @@
+kubernetes
+----------------------------
+#pod controller 
+#deployment controller
+#daemonset controller
+#statefulset controller
+#replicaset controller
+#configmaps
+#secrets
+#persistent volume
+#persistent volume claim
+RBAC
+#node selector 
+#node affinity and anti-affinity
+#Taints and tolerations
+Qos
+priority class
+count quota
+CPU quota
+memory quota
+HPA and VPA
+#ingress
+deployment strategies
+jobs controller
+network policy
+-------------------------------------
+Docker
+-------------------------------------
+Dockerfile
+Dockerfile-multistage build
+docker volume
+docker network
+--------------------------------------
+aws
+--------------------------------------
+handson all services
+--------------------------------------
+Terraform
+--------------------------------------
+resource blocks
+aws service resources by Terraform
+--------------------------------------
+jenkins
+------------------------------------
+declarative pipeline script
+integrate docker and kubernetes in pipeline
+---------------------------------------
+shell-script
+-------------------------------------------
+linux commands
+-------------------------------------------
+helm
+-------------------------------------------
