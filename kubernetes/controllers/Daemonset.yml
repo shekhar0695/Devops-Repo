@@ -26,9 +26,9 @@ metadata:
 spec: 
     type: NodePort
     selector:
-        app: ipapp
+        app: 
     ports:
        - name: http
-         port: 30003  
+         port: 30002  
          targetPort: 80
-         nodePort: 30081
+         nodePort: 30080
