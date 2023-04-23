@@ -1,17 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: deployment-1
+  name: ip_app-deployment
+  labels:
+    app: ipapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ipapp
+    spec:
+      containers:
+      - name: ip_app
+        image: shekharrr/ip_app:ip_app
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    name: ip-app-cluster-ip
 spec: 
-    replicas: 2
-        spec:
-            tolerations:
-                - key: "node"
-                operator: "Equal"
-                value: "worker2"
-                effect: "NoSchedule"
-           containers:
-              - name: nginx-1
-                image: shekharrr/nginx:nginx-web
-                ports:
-                  - containerPort: 80 
+    selector:
+        app: ipapp
+    ports:
+       - name: http
+         port: 30002     
+         targetPort: 80
