@@ -29,6 +29,6 @@ spec:
         app: my-nginx-daemonset
     ports:
        - name: http
-         port: 30002  
+         port: 30003 
          targetPort: 80
-         nodePort: 30080
+         nodePort: 30081
