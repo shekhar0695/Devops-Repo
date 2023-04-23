@@ -6,9 +6,6 @@ metadata:
     app: ipapp
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      app: ipapp
     spec:
       containers:
       - name: ip_app
