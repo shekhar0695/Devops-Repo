@@ -1,17 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ip_app-deployment
-  labels:
-    app: ipapp
-spec:
-  replicas: 3
-    spec:
-      containers:
-      - name: ip_app
-        image: shekharrr/ip_app:ip_app
-        ports:
-        - containerPort: 80
+    name: ip-app-deployment 
+spec: 
+    replicas: 4
+    selector:
+        matchLabels:
+            app: ipapp
+    template:
+        metadata:
+           labels: 
+              app: ipapp
+        spec:
+           containers:
+              - name: ip-app 
+                image: shekharrr/ip_app:ip_app
+                ports:
+                  - containerPort: 80 
+
 
 ---
 
