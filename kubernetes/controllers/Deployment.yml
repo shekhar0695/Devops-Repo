@@ -14,7 +14,7 @@ spec:
         spec:
            containers:
               - name: ip-app 
-                image: harshajain/ip-app:1
+                image: shekharrr/ip_app:latest
                 ports:
                   - containerPort: 80 
 
