@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-    name: ip-app-cluster-ip
+    name: nginx-cluster-ip
 spec: 
     type: NodePort
     selector:
-        app: 
+        app: my-nginx-daemonset
     ports:
        - name: http
          port: 30002  
