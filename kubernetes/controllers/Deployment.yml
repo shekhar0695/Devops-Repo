@@ -29,7 +29,6 @@ spec:
     selector:
         app: ipapp
     ports:
-       - name: http
-         port: 30002     
+       - name: http     
          targetPort: 80
          nodePort: 30080
