@@ -1,0 +1,432 @@
+Linux  
+Q1. How to troubleshoot server slowness
+A1. "Verify the server type and that it has the CPU and RAM resources to handle the user load and needs of your application.
+
+Verify whether your programme utilises a cache. If there isn't one already, think about turning one on. Caching plugins like W3 Total Cache can significantly increase performance for apps like WordPress.
+
+Verify if the server is currently hosting any cron jobs that are consuming resources.
+
+Review the server dashboard or monitoring page and check the list of processes consuming CPU and memory. Alternatively, log in to the machine console via SSH and execute the following command to see a list of running processes:
+
+Examine the available memory because low memory might influence the connectivity and performance of an application or a database. To view the available and utilised RAM, enter the following command."
+
+Q2. What is the Command to  check the load of the system ?
+A2. uptime
+
+Q3. What is the command to Find the passwd file under root and one level down
+A3. find / -maxdepth 2 -name passwd
+
+Q4. How to restart a service in linux?
+A4. systemctl restart <service_name>
+
+
+Jenkins and CI/CD
+Q1. What kind of pipeline have you written?
+A1. "In Jenkins mainly there are 2 types of pipeleine declarative and scripted 
+
+Declarative Pipeline:
+It is written in Pipeline Block and will be written in file called Jenkinsfile . The Jenkinsfile will be checked in to a SCM and can be referenced in the Pipeline.
+
+Scripted Pipeline :
+This is Written in a node block and will be written on the web ui of the Jenkins. Through groovy scripted we can end up writing a complicated code to add a functionality which
+is already available as Jenkins DSL."
+
+Q2. Expalain a CI/CD setup that you have done recently 
+
+Q3. How to manage user access in jenkins for defferent role ?
+A3. "Matrix Authorization allows configuring the lowest level permissions, such as starting new builds, configuring items, or deleting them, individually.
+
+Project-based matrix authorization allows configuring permissions for each item or agent independently. Permission applying to such items or agents that are granted in the global configuration apply to all of them, unless they don't inherit global permissions."
+
+
+Docker and Kubernetes 
+Q1. Can you remove (‘docker rm’) a container that is paused?
+A1. No, to remove a container it must be stopped first.
+
+Q2. What is the difference between ‘docker run’ and ‘docker create’?
+A2. "The primary difference is that using ‘docker create creates a container in a stopped state.
+Docker run command will create and run the container."
+
+Q3. What is Dockerfile and What is the difference between COPY & ADD instruction.
+A3. "Both copy and add instruction is used to copy files and directories from 
+		host machine build location to the image and the container created from it.
+	
+		ADD supports extra source formats 
+	  	  - If the source is a compressed file then ADD will automatically uncompress it 
+	    		in the destination.
+	      - If the source is a downloadable link then ADD will automatically download the 
+	        file in the destination."
+
+
+Q4. What is kubectl & kubelet ?
+A4. "The command-line interface (CLI) tool for interacting with a Kubernetes cluster is called kubectl. On a Kubernetes node, containers are applied, created, updated, and destroyed using the Kubelet technology."
+
+Q5. What are labels and selectors in kubernetes ?
+
+Q6. How can K8 node maintenance be performed?
+A6. "Maintenance tasks are a necessary component of administration; you might need to patch K8 or instal security updates. Drain the PODs that are present on the K8 node after marking the node as unschedulable.
+
+* kubectl cordon
+* kubectl drain --ignore-daemonsets
+Any daemonsets currently executing on this node should have the —ignore-daemonsets flag included. Just in case any statefulsets are running on this node, the POD for those statefulsets will be in pending status if there are no more nodes available to keep track of the number of stateful sets."
+
+
+Q7. Write a simple deployment file.
+A7. "apiVersion: apps/v1
+	kind: Deployment
+	metadata:
+	  name: nginx-deployment
+	  labels:
+	    app: nginx
+	spec:
+	  replicas: 3
+	  selector:
+	    matchLabels:
+	      app: nginx
+	  template:
+	    metadata:
+	      labels:
+	        app: nginx
+	    spec:
+	      containers:
+	      - name: nginx
+	        image: nginx:1.14.2
+	        ports:
+	        - containerPort: 80"
+
+
+AWS and Terraform 
+
+Q0. List all the service that you know in AWS cloud.
+
+Q1. Explain the difference between S3 and EBS?
+A1. "S3 Storage: Object-based storage, the ability to store movies, audios, photos, and documents, static mobile/website hosting (for magazines, for example), data analytics, and backup
+EFS: analytics workload, content management, media processing, and centralised storage
+EBS: Business continuity, database management (Relational & NoSQL), large data, and applications requiring higher IOPS (consistency and predictable performance) are only a few examples of such applications."
+
+Q2. What is Geo-Targeting in CloudFront?
+
+Q3. What is a Stateful and a Stateless Firewall?
+
+Q4. What are the native AWS Security logging capabilities?
+A4. "The majority of AWS services include logging options. Additionally, several of them, including AWS CloudTrail, AWS Config, and others, include account level logging. Let's focus on these two services in particular:
+AWS CloudTrail
+This service offers a record of each account's AWS API calls over time. You can use it to analyse security risks, keep track of resource changes, and audit compliance in your AWS environment. The best feature of this service is that you can set it up to notify you via AWS SNS when fresh logs are received.
+AWS Config 
+You can better comprehend the configuration changes in your environment thanks to this. This service offers an inventory of AWS resources together with information on their relationships, configuration history, and notice of configuration changes. Additionally, when fresh logs are received, it may be set up to communicate information via AWS SNS."
+
+
+Q5. How long does CloudWatch Logs store my log data?
+
+Q6. How to coonect multiple VPC in different regions and What Happens If Your Peering Connection Fails?
+A6. "VPC peering network connectivity failures might occur due to incorrect or missing route tables, firewall rules, or DNS (if applicable). To route traffic between VPCs in a peering connection with private IP addresses, the VPCs must be able to communicate with each other.
+There may be a bandwidth bottleneck."
+
+Q7. How do you monitor the VPC?
+A7. "We can use cloud watch or VPC flow logs to keep an eye on the VPC.
+By selecting the VPC from the menu, turn on the flow logs.
+The Flow Logs tab of the VPC dashboard will update with new Flow Logs.
+The CloudWatch Logs store the Flow Logs in log groups."
+
+Q8. What are the command used in the terraform?
+Q9. What is Provider and Provisioner ?
+A9 "1. The term ""provider"" refers to any cloud-based technology, such as github, AWS, PostgreSQL, etc., to which one can make an API call with the specific terraform provider binary to provision accessible services and components.
+The components and services you offer on these platforms are referred to as resources.
+3. When terraform is used to orchestrate a system, the term ""provisioner"" particularly refers to configuration tools like ansible or salt-stack."
+
+
+Q10. How to make Terraform to apply the plan without asking for confirmation?
+
+Q11. Write a sample terraform script to create s3 bucket with sse and versioning enabled.
+
+Linux  
+Q1. What could be wrong if I've added my public ssh key to authorized keys but I'm still getting a password prompt?
+A1. "Make that the /.ssh directory and its contents have the necessary permissions. The /.ssh folder was incorrectly configured when I first set up my ssh key auth, and it shouted at me.
+
+Only you should be able to write to your home directory, your.ssh directory, and the authorized keys file on the remote machine: Even if you are the only user in your group, rwxrwx—- is not okay; however, rwx——— and rwxr-xr-x are fine (if you prefer numeric modes: 700 or 755, not 775). The canonical path is tested (with symbolic links enlarged) if /.ssh or authorized keys are symbolic links. On the remote machine, your /.ssh/authorized keys file must be readable (at least 400), but you also need it to be writable."
+
+Q2. "Can you capture SIGKILL ?"
+A2. Enabling your custom handler for SIGKILL is pointless because you cannot capture SIGKILL (or SIGSTOP).
+
+Q3. When trying to umount a directory it says it's busy, how to find out which PID holds the directory?
+A3. fuser <directory_name> (or) ls -l /proc/*/fd/* | grep <directory_name>
+
+Q4. Which command would you use to extract text from the first column of the textfile file?
+A4. cat textfile | awk '{print $1}'
+
+Q5. How to backup the home directory by excluding "temp" and ".cache" folder inside it
+A5. rsync -a --info=backup --exclude="temp" --exclude=".cache" /home/user 
+
+Jenkins and CI/CD
+
+Q1. Explain Jenkins Multibranch Pipeline?
+A1. It is a pipeline job that can be configured to Create a set of Pipeline projects according to the detected branches in one GIT repository. This can be used to configure pipelines for all branches of a single repository e.g. if we maintain different branches (i.e. feature, hotfix, release branches) Multibranch pipeline job will be executed if there is a new commit in any of these branches.
+
+Q2. Difference between CI and CD, and Explain CI/CD process ?
+
+
+Q3. How do you store credentials in Jenkins securely?
+A3. Credentials can be stored securely in Jenkins using the Credentials plugin, which stores different types of credentials like - Username with a password, SSH username with the private key, AWS Credentials, Jenkins Build Token, Secret File/Text, X509 & other certificates, Vault related credentials securely with proper encryption & decryption as and when required.
+
+Q4. What are the ways to trigger a Jenkins Job/Pipeline?
+Q4. There are many ways we can trigger a job in Jenkins. Some of the common ways are as below -
+
+	- Trigger an API (POST) request to the target job URL with the required data.
+	- Trigger it manually from the Jenkins web application.
+	- Trigger it using Jenkins CLI from the master/slave nodes.
+	- Time-based Scheduled Triggers like a cron job.
+	- Event-based Triggers like SCM Actions (Git Commit, Pull Requests), WebHooks, etc.
+	- Upstream/Downstream triggers by other Jenkins jobs.
+
+Q5. What is a Jenkins Shared Library and how it is useful?
+A5. As an organization starts using more and more pipeline jobs, there is a chance for more and more code being duplicated in every pipeline job, since a part of the build/automation processes will be the same for most of the jobs. In such a situation, every other new upcoming job should also duplicate the same piece of code. To avoid duplications, the Jenkins project brought in the concept of Shared Libraries, to code - DRY - Don't Repeat Yourself.
+
+Shared libraries are a set of code that can be common for more than one pipeline job and can be maintained separately. Such libraries improve the maintenance, modularity & readability of the pipeline code. And it also speeds up the automation for new jobs.
+
+
+Docker and Kubernetes 
+Q1. How to create a user-defined Bridge network and How it differs from default Bridge?
+A1. "To create a user-defined bridge network, one can use the docker network create command -
+$ docker network create mynet
+You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of docker network create --help for details."
+
+Q2. What is Docker Trusted Registry?
+A2. Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker. You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications.
+
+Q3. Write a dockerfile to run ubuntu with packages curl, wget, jq, git, dns-utils, net-tools.
+
+Q4. How to persist the data from docker container if the container gets deleted?
+Q4. Create a docker volumes and mount to docker container to a path which need to retained even after container deletion.
+
+Q5. How many containers can a pod support at once?
+
+Q6. Explain the architecture of kubernetes.
+
+Q7. How do the two pods talk to one another?
+
+Q8. How to list all services in production namespace?
+
+Q9. How restrict the resoruce usage of pod like CPU and RAM in k8s.
+
+Q10. What are the challenges you faced while deploying resources to k8s cluster.
+
+AWS and Terraform 
+
+Q1. List some AWS services and Which service in AWS used for real-time monitoring?
+
+Q2. How can we schedule Lambda function to run daily?
+
+Q3. How To Migrate an Instance to Another Availability Zone?
+A3. "- We must build an AMI from the active instance.
+- Using the newly constructed AMI, launch an instance while specifying the new Availability Zone.
+- Either choose a different instance type, or use the same instance type as the first instance.
+- We can link the original instance's associated Elastic IP address to the new instance if it does."
+
+Q4. What distinguishes instore and EBS backed instances from one another?
+A4. Block-level temporary storage is offered by Instore. The data in the instance store will presumably be destroyed if the instance is stopped and restarted, but not in the elastic block store, where data is preserved even if the instance is stopped.
+
+Q5. what do you mean by target group in load balancer?
+A5. "A load balancer is instructed by a target group where to send traffic, such as to EC2 instances with fixed IP addresses or AWS Lambda functions.
+For instance, we can reroute traffic to a group of instances based on the host path. that are generated as a component of target groups, or we can divert incoming traffic using a target group to a lambda function; similarly, we can direct traffic to an IP address."
+
+
+Q6. "How do you create a instance with the keypair and download the keypair to workspace?"
+A6. Refer class assigmnet 
+
+Q7. What are local, input and ouput variables in terraform? 
+
+Q8. The purpose of the Terraform refresh command?
+
+Q9. How to configure Terraform, so that multiple users can work in the same terraform project.
+A9. Using Git to maintain terraform scripts and Using Backend to maintain common statefile 
+
+Linux  
+Q1. A Bash script must begin with a shebang line in order for it to be executed similarly to an OS command. How does this appear?
+A1. #!/bin/bash
+
+Q2. "When I add a user, by default, I see that /bin/bash is allocated as the default shell, and /home is given as the default location for the user's home directory.
+How can I ensure that zsh is the default allocated shell and that the default home directory for the user is /export/home/username> the next time I use ""useradd""?"
+A2. Useradd takes default arguments from "/etc/default/useradd" here we can modify the SHELL parameter to zsh
+
+Q3. how to setup passwordless-ssh between two server?
+A3. "First we need to generate a public and private key on Ubuntu or CentOS, use the command:
+ssh-keygen -t rsa
+The option -t stands for type, while RSA is the protocol used for key generation. RSA is the default type – hence you can also use the simpler version of the command – ssh-keygen. Then we can use below command to copy pub key tothe remove server.
+ssh-copy-id remote_username@remote_IP_Address
+Here you will get a prompt for the remote machine’s password. Once the authentication is successful, the generated SSH public key will be added to the remote machine’s authorized_keys file. After adding the entry, the connection will be closed automatically.
+The we can connect to the server without password."
+
+Q4. What is Nmap command?
+Q4. Nmap sends packets and examines the answers to find hosts and services on a computer network. For probing computer networks, Nmap offers a number of functions, including as host discovery, service detection, and operating system detection.
+
+Q5. How to check whether a port is open or not in linux?
+A5. lsof -i :<port_number> or netstat -tunlp <port_number>           
+
+
+Jenkins and CI/CD
+
+Q1. what are the types of jenkins pipeline scripts you know ?
+A1. "In Jenkins mainly there are 2 types of pipeleine declarative and scripted 
+
+Declarative Pipeline:
+It is written in Pipeline Block and will be written in file called Jenkinsfile . The Jenkinsfile will be checked in to a SCM and can be referenced in the Pipeline.
+
+Scripted Pipeline :
+This is Written in a node block and will be written on the web ui of the Jenkins. Through groovy scripted we can end up writing a complicated code to add a functionality which
+is already available as Jenkins DSL."
+
+Q2. Explain the CI/CD process which you configured in your current company.
+
+
+Q3. What are the contents of jenkins HOME_DIRECTORY?
+A3. "Jenkins HOME_DIRECTORY is the Installation path of Jenkins which is /var/lib/jenkins. It contains all the Jenkins configuration files , build logs , Plugins and many more.
+config.xml : Contains the complete configuration of jenkins plugins and global tools configured.
+credential.xml : which mainly contains all the credentials configured in the jenkins as encrypted text.
+Plugins : This directory contains all the Plugins which are already installed in  Jenkins .
+nodes: all the node related configuration are available in this directory.
+jobs: contains configuration of all the jobs in the jenkins as xml files.
+workspace: will be the working directory for all the Jenkins job."
+
+Q4. How to manage user access in jenkins for defferent role ?
+A4. "Matrix Authorization allows configuring the lowest level permissions, such as starting new builds, configuring items, or deleting them, individually.
+
+Docker and Kubernetes 
+Q1. What is Dockerfile and List some Dockerfile instructions.
+
+Q2. Difference between ENV and ARG instruction
+
+Q3. Explain the types of docker netwroks.
+
+Q4. Types of Docker volumes.
+
+Q5. Explain the architecture of kubernetes.
+
+Q6. Explain Deployment controller in K8S.
+
+Q7. What method/tool is used  to setup the kubernetes in your company and list different way you know to run k8s cluster?
+
+Q8. How to manages user and define the authorization to users in k8s.
+
+Q9. How many cluster are you managing now and What is the size of cluster in your company.
+
+
+AWS and Terraform 
+
+Q1. have you worked on load balancers and What is the use of the Health Check feature in load balancing? 
+
+Q2. Can you change the public Ip of a running instance?
+A2. There can only ever be one public IP address assigned to an instance. When an instance receives an Elastic IP, the old public IP address is relinquished and the new one becomes the instance's new public IP address. For instance, if you launch an instance and then give it an elastic IP address, the instance's initial public IP address will be changed to the elastic IP address. A new public IP address will be assigned to the instance if the Elastic IP is later separated from it. There won't be another assignment of the initial public IP address to the instance.
+
+Q3. How can you access the instance if you've lost your ssh key?
+A3. "There are numerous approaches, but a straightforward one is:
+- Stop the instance from the AWS console.
+- Create a snapshot of the instance.
+- Create a new Key Pair and a duplicate instance from the resulting snapshot."
+
+Q4. What is an AMI?
+
+Q5. When we have connected instances to an ELB, which AWS service allows us to automatically terminate a sick instance and replace it with a new instance?
+A5. Auto Scaling Groups (ASG)
+
+Q6. Is it possible for many instances to access the same volume?
+A6. "Yes, you can activate Multi-Attach on an EBS Provisioned IOPS io1 volume to enable a volume to be connected to as many as sixteen Nitro-based EC2 instances at once within the same Availability Zone.
+Limitations:
+ Multi-Attach is supported exclusively on Provisioned IOPS SSD volumes.
+ Up to 16 Linux instances built on the Nitro System that are located in the same Availability Zone can have Multi-Attach enabled volumes attached to them.
+ Multi-Attach for io1 volumes is available in the following Regions only: us-east-1, uswest-2, eu-west-1, and ap-northeast-2.
+ Multi-Attach enabled volumes can't be created as boot volumes."
+
+Q7. Explain how your are using terraform in your company.
+
+Q8. How to manage the multiple statefile in a same working directory?
+
+Q9. How maitain the dependency between resource blocks and between modules.
+
+Q10. Expalin the terraform process which you follow.
+
+Linux  
+Q1. What is a Swap Space or Swap Partition?
+A1. Linux enables an additional RAM allocation, known as a swap space, in the physical hard disc when we need more RAM to process our applications since the system's RAM is insufficient. It is used to store running programmes in the system at any given time.
+
+Q2. What is the sticky bit?
+A2. A sticky bit is a permission that, when placed on a file or folder, allows only the owner or root user to change, rename, or delete the specific directory or file in question. On a file with a sticky bit, no other user would be allowed to have these rights. Without the sticky bit enabled, any user, regardless of the owner of the file or folder, can change, rename, or delete the directory or file in Unix-like systems.
+
+Q3. What happens to a child process that terminates without a parent process to wait for it, and why is this bad?
+A3. "It turns into a zombie process.
+
+There is no system resource consumption by zombie processes. Each one stores its process description in a relatively small amount of system memory, in reality. But every zombie process keeps its process ID (PID). On 32-bit computers, the default number of process IDs for Linux systems is 32767. The whole pool of accessible PIDs will eventually be assigned to zombie processes if zombies are amassing rapidly, such as if incorrectly programmed server software generates zombie processes when under load, prohibiting the launch of other processes."
+
+Q4. In relation to other operating systems, what level of security does Linux offer?
+A4. "If an operating system is not secure then it is not successful. In comparison to other operating systems, Linux is the most secure operating system as it consists of Pluggable Authentication Modules. A secure layer is created between the authentication process and applications. It is because of PAM only by which an admin can give access to other users to log into the system.  You can find the configuration of PAM applications in the “/etc/pam.d” or “/etc/pam.conf” directory."
+
+Q5. What can you do if, after a restart, your newly configured http server isn't working?
+A5. Need to Troubleshoot like Verify the service's status, Verify for configuration errors, Examine the logs of server for any errors etc.
+
+Jenkins and CI/CD
+
+Q1. What is Jenkinsfile and why we use it ?
+A1. A Jenkinsfile is a plain text file that contains the definition of a Jenkins Pipeline can be scripted or declarative groovy scritp and is checked into source code management (SCM) tool like git. 
+
+Q2. Explain the CI/CD process.
+
+Q3. How to change port for Jenkins?
+A3. open /etc/sysconfig/jenkins in CentOS/RHEL or /etc/default/jenkins in Debian/Ubuntu change the value JENKINS_PORT=8080 variable to required port.
+
+Q4. How to take a backup of your Jenkins build jobs?
+Q4. Within the XML configuration, each Jenkins build is stored. When this folder is copied, the configuration of all the build jobs that are managed by the Jenkins master is backed up. If we can perform a Jenkins Git integration, then it is good. When we copy the contents of the folder, we will see that the build jobs described in the folder will be restored when the Jenkins server is started the next time.
+
+Docker and Kubernetes 
+Q1. Explain Docker architecture.
+
+Q2. Does Docker container package up the entire OS?
+A2. Docker containers do not package up the OS. They package up the applications with everything that the application needs to run. The engine is installed on top of the OS running on a host. Containers share the OS kernel allowing a single host to run multiple containers.
+
+
+Q4. How to Backup, Restore, or Migrate data volumes under Docker container?
+A4. "Steps to Backup a container
+
+ Launch a new container and mount the volume from the dbstore container
+ Mount a local host directory as /backup
+ Pass a command that tars the contents of the dbdata volume to a backup.tar file inside our /backup directory.
+$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata Restore container from backup With the backup just created, you can restore it to the same container, or another that you made elsewhere. For example, create a new container named dbstore2: $ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
+
+Then un-tar the backup file in the new container`s data volume:
+
+$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c ""cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+
+Q5. Explain the architecture of kubernetes.
+
+Q6. List all the controllers which you have worked on and Explain difference between ReplicaSet and Replication controller.
+
+Q7. Everytime I deploy the pod I need to pull the image how to configure this ?
+A7. "In the manifest file under spec we need to define  ImagePullPolicy: Always"
+
+Q8. What is an effective way to managing the access to multiple clusters?
+A8. Multiple clusters' access information can be supplied in this config file, which kubectl searches for. The access to these clusters can be controlled with kubectl config commands. Additionally, we can transition between clusters by using kubecontext.
+
+Q9. Difference between deployment and daemonset controller. What scenarios typically involve the utilisation of daemonsets?
+A9. daemonset creates a copy of pod in each and every worker node. Typically, it is used to run the monitoring or logging agents that must run on each executor node in the cluster.
+
+
+AWS and Terraform 
+
+Q1. List all the services which you worker in AWS cloud.
+
+Q2. What is auto-scaling and explain the different types of autoscalling?
+
+Q3. What are the differences between NAT Instances and NAT Gateways?
+
+Q4. How do you monitor Amazon VPC?
+A4. "You can monitor Amazon VPC using: CloudWatch, VPC Flow Logs"
+
+Q5. What is Geo-Targeting in CloudFront?
+A5. Based on the user's geographic location, geo-targeting makes it possible to create customised information. As a result, you may give users content that is more pertinent to them. For instance, you could utilise geo-targeting to display a user in India news on local body elections that you might not want to broadcast to a user in the US. Similar to this, news about the baseball tournament may be more pertinent to a user in the US and less pertinent to a person in India.
+
+Q6. What are modules in Terraform?
+
+Q7. What provisioners in Terraform and what are its usecases ?
+
+Q8. What are the different blocks in Terraform and What is output block in terraform?
+
+Q9. What is Backend in terraform?
+
