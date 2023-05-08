@@ -1,0 +1,8 @@
+k8s Ingress----
+In Kubernetes, an "Ingress" is an object that allows external traffic to access services within a Kubernetes cluster.
+Think of it like a traffic cop, routing incoming traffic to the appropriate service based on the requested URL or hostname.
+The Ingress resource works by defining a set of rules for how incoming traffic should be routed, and then using a controller to manage the routing of that traffic to the appropriate service.
+To use Ingress in Kubernetes, you'll need to create an Ingress resource that defines the rules for how traffic should be routed. This includes specifying the hostname or URL path that should be matched, as well as the service that should receive the traffic.
+Once you have created an Ingress resource, you'll need to deploy an Ingress controller to actually route the traffic based on the defined rules. Kubernetes supports a variety of Ingress controllers, including Nginx, Traefik, and Istio.
+Overall, Ingress is a powerful tool for managing external traffic to your Kubernetes cluster, and can help simplify the process of routing traffic to different services within your application.
+
